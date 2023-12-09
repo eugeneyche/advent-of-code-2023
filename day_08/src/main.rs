@@ -1,9 +1,16 @@
-use std::io;
+use std::env;
 use std::cmp;
+use std::io;
 use std::collections::HashMap;
 
 fn main() {
-    p2();
+    if env::args().any(|x| x == "--p1") {
+        println!("Part 1:");
+        p1();
+    } else {
+        println!("Part 2:");
+        p2();
+    }
 }
 
 #[derive(Clone)]
