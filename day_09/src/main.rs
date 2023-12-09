@@ -12,11 +12,7 @@ fn main() {
 }
 
 fn derivative(l: &[i32]) -> Vec<i32> {
-    let mut result = vec![0; l.len() - 1];
-    for i in 0..l.len() - 1 {
-        result[i] = l[i + 1] - l[i];
-    }
-    result
+    l.windows(2).map(|w| w[1] - w[0]).collect()
 }
 
 fn p1() {
